@@ -1,0 +1,5 @@
+module libjpeg [system] {
+  header "shim.h"
+  link "jpeg"
+  export *
+}
