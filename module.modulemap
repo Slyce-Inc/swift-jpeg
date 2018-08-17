@@ -1,4 +1,4 @@
-module libjpeg [system] {
+module Clibjpeg [system] {
   header "shim.h"
   link "jpeg"
   export *

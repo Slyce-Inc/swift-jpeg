@@ -3,11 +3,11 @@
 import PackageDescription
 
 let package = Package(
-    name: "libjpeg",
+    name: "Clibjpeg",
     providers: [
         .apt(["libjpeg-dev"])
     ],
-    products: [ .library(name: "libjpeg", targets: ["libjpeg"]) ],
+    products: [ .library(name: "Clibjpeg", targets: ["Clibjpeg"]) ],
     dependencies: [
     ]
 )
