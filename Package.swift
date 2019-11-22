@@ -1,13 +1,22 @@
-// swift-tools-version:4.0
+// swift-tools-version:5.0
 
 import PackageDescription
 
 let package = Package(
-    name: "Clibjpeg",
-    providers: [
-        .apt(["libjpeg-dev"])
-    ],
-    products: [ .library(name: "Clibjpeg", targets: ["Clibjpeg"]) ],
-    dependencies: [
-    ]
+  name: "JPEG",
+  products: [ 
+    .library(name: "Clibjpeg", targets: ["Clibjpeg"]),
+    .library(name: "JPEG", targets: ["JPEG"]) 
+  ],
+  targets: [
+    .target(
+      name: "JPEG",
+      dependencies: [ "Clibjpeg" ]),
+    .systemLibrary(
+      name: "Clibjpeg", 
+      pkgConfig: "libjpeg", 
+      providers: [
+        .apt([ "libjpeg-turbo8-dev" ]),
+      ]), 
+  ]
 )
